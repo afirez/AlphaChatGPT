@@ -1,0 +1,39 @@
+[submodule "submodules/financial-news-llama-index"]
+	path = submodules/financial-news-llama-index
+	url = https://github.com/afirez/financial-news-llama-index.git
+[submodule "submodules/FinGPT"]
+	path = submodules/FinGPT
+	url = https://github.com/afirez/FinGPT.git
+[submodule "submodules/mlc-llm"]
+	path = submodules/mlc-llm
+	url = https://github.com/afirez/mlc-llm.git
+[submodule "submodules/LangChain-Tutorials"]
+	path = submodules/LangChain-Tutorials
+	url = https://github.com/afirez/LangChain-Tutorials.git
+[submodule "submodules/tutorials"]
+	path = submodules/tutorials
+	url = https://github.com/afirez/tutorials.git
+[submodule "submodules/openai-cookbook"]
+	path = submodules/openai-cookbook
+	url = https://github.com/afirez/openai-cookbook.git
+[submodule "submodules/Auto-GPT"]
+	path = submodules/Auto-GPT
+	url = https://github.com/afirez/Auto-GPT.git
+[submodule "submodules/flutter_chat_box"]
+	path = submodules/flutter_chat_box
+	url = https://github.com/afirez/flutter_chat_box.git
+[submodule "submodules/whisper.cpp"]
+	path = submodules/whisper.cpp
+	url = https://github.com/afirez/whisper.cpp.git
+[submodule "submodules/Orator"]
+	path = submodules/Orator
+	url = https://github.com/afirez/Orator.git
+[submodule "submodules/feiguyunai"]
+	path = submodules/feiguyunai
+	url = https://github.com/afirez/feiguyunai.git
+[submodule "submodules/langchain3"]
+	path = submodules/langchain3
+	url = https://github.com/afirez/langchain3.git
+[submodule "submodules/bark"]
+	path = submodules/bark
+	url = https://github.com/afirez/bark.git
