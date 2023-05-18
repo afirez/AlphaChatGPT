@@ -37,3 +37,12 @@
 [submodule "submodules/bark"]
 	path = submodules/bark
 	url = https://github.com/afirez/bark.git
+[submodule "submodules/pygpt4all"]
+	path = submodules/pygpt4all
+	url = https://github.com/afirez/pygpt4all.git
+[submodule "submodules/llama.cpp"]
+	path = submodules/llama.cpp
+	url = https://github.com/afirez/llama.cpp.git
+[submodule "submodules/Thorsten-Voice"]
+	path = submodules/Thorsten-Voice
+	url = https://github.com/afirez/Thorsten-Voice.git
