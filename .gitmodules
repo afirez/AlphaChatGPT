@@ -46,3 +46,12 @@
 [submodule "submodules/Thorsten-Voice"]
 	path = submodules/Thorsten-Voice
 	url = https://github.com/afirez/Thorsten-Voice.git
+[submodule "submodules/privateGPT"]
+	path = submodules/privateGPT
+	url = https://github.com/afirez/privateGPT.git
+[submodule "submodules/gpt4all"]
+	path = submodules/gpt4all
+	url = https://github.com/afirez/gpt4all.git
+[submodule "submodules/voice_assistant"]
+	path = submodules/voice_assistant
+	url = https://github.com/afirez/voice_assistant.git
