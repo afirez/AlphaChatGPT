@@ -55,3 +55,6 @@
 [submodule "submodules/voice_assistant"]
 	path = submodules/voice_assistant
 	url = https://github.com/afirez/voice_assistant.git
+[submodule "submodules/sherpa"]
+	path = submodules/sherpa
+	url = https://github.com/afirez/sherpa.git
