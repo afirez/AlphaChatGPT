@@ -1,45 +1,55 @@
 [submodule "submodules/financial-news-llama-index"]
 	path = submodules/financial-news-llama-index
 	url = https://github.com/afirez/financial-news-llama-index.git
+	branch = main
 [submodule "submodules/FinGPT"]
 	path = submodules/FinGPT
 	url = https://github.com/afirez/FinGPT.git
 [submodule "submodules/mlc-llm"]
 	path = submodules/mlc-llm
 	url = https://github.com/afirez/mlc-llm.git
+	branch = main
 [submodule "submodules/LangChain-Tutorials"]
 	path = submodules/LangChain-Tutorials
 	url = https://github.com/afirez/LangChain-Tutorials.git
+	branch = main
 [submodule "submodules/tutorials"]
 	path = submodules/tutorials
 	url = https://github.com/afirez/tutorials.git
+	branch = main
 [submodule "submodules/openai-cookbook"]
 	path = submodules/openai-cookbook
 	url = https://github.com/afirez/openai-cookbook.git
+	branch = main
 [submodule "submodules/Auto-GPT"]
 	path = submodules/Auto-GPT
 	url = https://github.com/afirez/Auto-GPT.git
 [submodule "submodules/flutter_chat_box"]
 	path = submodules/flutter_chat_box
 	url = https://github.com/afirez/flutter_chat_box.git
+	branch = main
 [submodule "submodules/whisper.cpp"]
 	path = submodules/whisper.cpp
 	url = https://github.com/afirez/whisper.cpp.git
 [submodule "submodules/Orator"]
 	path = submodules/Orator
 	url = https://github.com/afirez/Orator.git
+	branch = main
 [submodule "submodules/feiguyunai"]
 	path = submodules/feiguyunai
 	url = https://github.com/afirez/feiguyunai.git
+	branch = main
 [submodule "submodules/langchain3"]
 	path = submodules/langchain3
 	url = https://github.com/afirez/langchain3.git
 [submodule "submodules/bark"]
 	path = submodules/bark
 	url = https://github.com/afirez/bark.git
+	branch = main
 [submodule "submodules/pygpt4all"]
 	path = submodules/pygpt4all
 	url = https://github.com/afirez/pygpt4all.git
+	branch = main
 [submodule "submodules/llama.cpp"]
 	path = submodules/llama.cpp
 	url = https://github.com/afirez/llama.cpp.git
@@ -49,12 +59,15 @@
 [submodule "submodules/privateGPT"]
 	path = submodules/privateGPT
 	url = https://github.com/afirez/privateGPT.git
+	branch = main
 [submodule "submodules/gpt4all"]
 	path = submodules/gpt4all
 	url = https://github.com/afirez/gpt4all.git
+	branch = main
 [submodule "submodules/voice_assistant"]
 	path = submodules/voice_assistant
 	url = https://github.com/afirez/voice_assistant.git
 [submodule "submodules/sherpa"]
 	path = submodules/sherpa
 	url = https://github.com/afirez/sherpa.git
+	branch = main
