@@ -71,3 +71,18 @@
 	path = submodules/sherpa
 	url = https://github.com/afirez/sherpa.git
 	branch = main
+[submodule "submodules/Hands-On-Deep-Learning-Algorithms-with-Python"]
+	path = submodules/Hands-On-Deep-Learning-Algorithms-with-Python
+	url = https://github.com/afirez/Hands-On-Deep-Learning-Algorithms-with-Python.git
+[submodule "submodules/Hands-On-Meta-Learning-with-Python"]
+	path = submodules/Hands-On-Meta-Learning-with-Python
+	url = https://github.com/afirez/Hands-On-Meta-Learning-with-Python.git
+[submodule "submodules/Hands-On-Reinforcement-Learning-with-Python"]
+	path = submodules/Hands-On-Reinforcement-Learning-with-Python
+	url = https://github.com/PacktPublishing/Hands-On-Reinforcement-Learning-with-Python.git
+[submodule "submodules/Deep-Reinforcement-Learning-with-Python"]
+	path = submodules/Deep-Reinforcement-Learning-with-Python
+	url = https://github.com/afirez/Deep-Reinforcement-Learning-with-Python.git
+[submodule "submodules/Getting-Started-with-Google-BERT"]
+	path = submodules/Getting-Started-with-Google-BERT
+	url = https://github.com/PacktPublishing/Getting-Started-with-Google-BERT.git
