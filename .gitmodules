@@ -90,3 +90,6 @@
 	path = submodules/OpenBuddy
 	url = https://github.com/afirez/OpenBuddy.git
 	branch = main
+[submodule "submodules/gato"]
+	path = submodules/gato
+	url = https://github.com/afirez/gato.git
