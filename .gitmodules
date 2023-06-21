@@ -93,3 +93,4 @@
 [submodule "submodules/gato"]
 	path = submodules/gato
 	url = https://github.com/afirez/gato.git
+	branch = main
