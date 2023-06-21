@@ -94,3 +94,7 @@
 	path = submodules/gato
 	url = https://github.com/afirez/gato.git
 	branch = main
+[submodule "submodules/languagemodels"]
+	path = submodules/languagemodels
+	url = https://github.com/afirez/languagemodels.git
+	branch = main
