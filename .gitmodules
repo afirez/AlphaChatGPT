@@ -86,3 +86,7 @@
 [submodule "submodules/Getting-Started-with-Google-BERT"]
 	path = submodules/Getting-Started-with-Google-BERT
 	url = https://github.com/PacktPublishing/Getting-Started-with-Google-BERT.git
+[submodule "submodules/OpenBuddy"]
+	path = submodules/OpenBuddy
+	url = https://github.com/afirez/OpenBuddy.git
+	branch = main
