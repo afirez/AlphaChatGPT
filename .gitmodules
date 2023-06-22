@@ -98,3 +98,9 @@
 	path = submodules/languagemodels
 	url = https://github.com/afirez/languagemodels.git
 	branch = main
+[submodule "submodules/AutoGPTQ"]
+	path = submodules/AutoGPTQ
+	url = https://github.com/afirez/AutoGPTQ.git
+[submodule "submodules/text-generation-webui"]
+	path = submodules/text-generation-webui
+	url = https://github.com/afirez/text-generation-webui.git
