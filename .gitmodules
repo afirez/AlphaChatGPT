@@ -104,3 +104,15 @@
 [submodule "submodules/text-generation-webui"]
 	path = submodules/text-generation-webui
 	url = https://github.com/afirez/text-generation-webui.git
+[submodule "submodules/RecurrentGPT"]
+	path = submodules/RecurrentGPT
+	url = https://github.com/afirez/RecurrentGPT.git
+	branch = main
+[submodule "submodules/Mastering-Transformers"]
+	path = submodules/Mastering-Transformers
+	url = https://github.com/afirez/Mastering-Transformers.git
+	branch = main
+[submodule "submodules/llama2.c"]
+	path = submodules/llama2.c
+	url = https://github.com/afirez/llama2.c.git
+	branch = master
