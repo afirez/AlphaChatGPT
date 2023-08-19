@@ -116,3 +116,7 @@
 	path = submodules/llama2.c
 	url = https://github.com/afirez/llama2.c.git
 	branch = master
+[submodule "alphachatgpt/case_01_mario/SuperMarioBros-AI"]
+	path = alphachatgpt/case_01_mario/SuperMarioBros-AI
+	url = https://github.com/afirez/SuperMarioBros-AI.git
+	branch = master
