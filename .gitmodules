@@ -128,3 +128,7 @@
 	path = alphachatgpt/case_03_neuro_evoluation_snakeai/SnakeAI
 	url = https://github.com/afirez/SnakeAI.git
 	branch = master
+[submodule "alphachatgpt/case_03_neuro_evoluation_snakeai/snake"]
+	path = alphachatgpt/case_03_neuro_evoluation_snakeai/snake
+	url = https://github.com/afirez/snake.git
+	branch = main
