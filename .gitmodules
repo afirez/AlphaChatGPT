@@ -136,3 +136,7 @@
 	path = alphachatgpt/case_03_neuro_evoluation_snakeai/snake-ai-linyi
 	url = https://github.com/afirez/snake-ai-linyi.git
 	branch = master
+[submodule "alphachatgpt/case_03_neuro_evoluation_snakeai/Snake-Battle-Royale"]
+	path = alphachatgpt/case_03_neuro_evoluation_snakeai/Snake-Battle-Royale
+	url = https://github.com/afirez/Snake-Battle-Royale.git
+	branch = master
