@@ -140,3 +140,7 @@
 	path = alphachatgpt/case_03_neuro_evoluation_snakeai/Snake-Battle-Royale
 	url = https://github.com/afirez/Snake-Battle-Royale.git
 	branch = master
+[submodule "alphachatgpt/case_00_neuro_evoluation/reweight-gpt"]
+	path = alphachatgpt/case_00_neuro_evoluation/reweight-gpt
+	url = https://github.com/afirez/reweight-gpt
+	branch = main
