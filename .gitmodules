@@ -83,6 +83,7 @@
 [submodule "submodules/Deep-Reinforcement-Learning-with-Python"]
 	path = submodules/Deep-Reinforcement-Learning-with-Python
 	url = https://github.com/afirez/Deep-Reinforcement-Learning-with-Python.git
+	branch = master-v2
 [submodule "submodules/Getting-Started-with-Google-BERT"]
 	path = submodules/Getting-Started-with-Google-BERT
 	url = https://github.com/PacktPublishing/Getting-Started-with-Google-BERT.git
