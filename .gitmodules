@@ -112,7 +112,7 @@
 [submodule "submodules/Mastering-Transformers"]
 	path = submodules/Mastering-Transformers
 	url = https://github.com/afirez/Mastering-Transformers.git
-	branch = main
+	branch = master-v2
 [submodule "submodules/llama2.c"]
 	path = submodules/llama2.c
 	url = https://github.com/afirez/llama2.c.git
