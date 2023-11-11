@@ -120,7 +120,7 @@
 [submodule "alphachatgpt/case_01_mario/SuperMarioBros-AI"]
 	path = alphachatgpt/case_01_mario/SuperMarioBros-AI
 	url = https://github.com/afirez/SuperMarioBros-AI.git
-	branch = master
+	branch = master-v2
 [submodule "alphachatgpt/case_02_neuro_evaluation/Numpy-Neuroevolution"]
 	path = alphachatgpt/case_02_neuro_evaluation/Numpy-Neuroevolution
 	url = https://github.com/afirez/Numpy-Neuroevolution
