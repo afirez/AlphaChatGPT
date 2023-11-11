@@ -132,7 +132,7 @@
 [submodule "alphachatgpt/case_03_neuro_evoluation_snakeai/snake"]
 	path = alphachatgpt/case_03_neuro_evoluation_snakeai/snake
 	url = https://github.com/afirez/snake.git
-	branch = main
+	branch = case_03_neuro_evoluation
 [submodule "alphachatgpt/case_03_neuro_evoluation_snakeai/snake-ai-linyi"]
 	path = alphachatgpt/case_03_neuro_evoluation_snakeai/snake-ai-linyi
 	url = https://github.com/afirez/snake-ai-linyi.git
@@ -140,7 +140,7 @@
 [submodule "alphachatgpt/case_03_neuro_evoluation_snakeai/Snake-Battle-Royale"]
 	path = alphachatgpt/case_03_neuro_evoluation_snakeai/Snake-Battle-Royale
 	url = https://github.com/afirez/Snake-Battle-Royale.git
-	branch = master
+	branch = case_03_ga_vs_dqn
 [submodule "alphachatgpt/case_00_neuro_evoluation/reweight-gpt"]
 	path = alphachatgpt/case_00_neuro_evoluation/reweight-gpt
 	url = https://github.com/afirez/reweight-gpt
