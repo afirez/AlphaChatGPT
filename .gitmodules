@@ -145,3 +145,15 @@
 	path = alphachatgpt/case_00_neuro_evoluation/reweight-gpt
 	url = https://github.com/afirez/reweight-gpt
 	branch = main
+[submodule "alphachatgpt/case_05_diffusion_model/diffusion_model"]
+	path = alphachatgpt/case_05_diffusion_model/diffusion_model
+	url = https://github.com/afirez/diffusion_model.git
+	branch = main
+[submodule "alphachatgpt/case_05_diffusion_model/Deep-learning-with-PyTorch-video"]
+	path = alphachatgpt/case_05_diffusion_model/Deep-learning-with-PyTorch-video
+	url = https://github.com/afirez/Deep-learning-with-PyTorch-video.git
+	branch = master
+[submodule "alphachatgpt/case_05_diffusion_model/rl_case"]
+	path = alphachatgpt/case_05_diffusion_model/rl_case
+	url = https://github.com/afirez/rl_case.git
+	branch = main
