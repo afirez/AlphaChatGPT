@@ -1,0 +1,6 @@
+<resources>
+    <string name="login_by_facebook">즐거운 생활의 시작, ShortTV</string>
+    <string name="login_by_apple">Appleでログインする</string>
+    <string name="login_by_google">Googleでログインする</string>
+    <string name="login_user_protocol">続けるには、利用規約およびプライバシーポリシーに同意する必要があります。</string>
+</resources>

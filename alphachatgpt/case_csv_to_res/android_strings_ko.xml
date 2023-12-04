@@ -1,0 +1,6 @@
+<resources>
+    <string name="login_by_facebook">페이스북으로 로그인하기</string>
+    <string name="login_by_apple">Apple로 로그인하기</string>
+    <string name="login_by_google">Google로 로그인하기</string>
+    <string name="login_user_protocol">계속 진행하면 이용약관과 개인정보처리방침에 동의하는 것을 의미합니다.</string>
+</resources>

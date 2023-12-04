@@ -1,0 +1,29 @@
+<resources>
+    <string name="zh">用Facebook登录</string>
+    <string name="zh-rtw">用Facebook登錄</string>
+    <string name="en">Log in with Facebook</string>
+    <string name="ja">즐거운 생활의 시작, ShortTV</string>
+    <string name="ko">페이스북으로 로그인하기</string>
+    <string name="th">เข้าสู่ระบบด้วย Facebook</string>
+
+    <string name="zh">用Apple登录</string>
+    <string name="zh-rtw">用Apple登錄</string>
+    <string name="en">Log in with Apple</string>
+    <string name="ja">Appleでログインする</string>
+    <string name="ko">Apple로 로그인하기</string>
+    <string name="th">Apple로 로그인하기</string>
+
+    <string name="zh">用Google登录</string>
+    <string name="zh-rtw">用Google登錄</string>
+    <string name="en">Log in with Google</string>
+    <string name="ja">Googleでログインする</string>
+    <string name="ko">Google로 로그인하기</string>
+    <string name="th">Google로 로그인하기</string>
+
+    <string name="zh">继续表示同意我们的用户协议和隐私政策</string>
+    <string name="zh-rtw">繼續表示同意我們的用戶協議和隱私政策</string>
+    <string name="en">By continuing, you agree to the User Agreement and Privacy Policy.</string>
+    <string name="ja">続けるには、利用規約およびプライバシーポリシーに同意する必要があります。</string>
+    <string name="ko">계속 진행하면 이용약관과 개인정보처리방침에 동의하는 것을 의미합니다.</string>
+    <string name="th">เมื่อดำเนินการต่อไป คุณตกลงยินยอมตามข้อกำหนดและนโยบายความเป็นส่วนตัวของผู้ใช้</string>
+</resources>

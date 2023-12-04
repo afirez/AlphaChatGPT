@@ -1,0 +1,6 @@
+<resources>
+    <string name="login_by_facebook">เข้าสู่ระบบด้วย Facebook</string>
+    <string name="login_by_apple">Apple로 로그인하기</string>
+    <string name="login_by_google">Google로 로그인하기</string>
+    <string name="login_user_protocol">เมื่อดำเนินการต่อไป คุณตกลงยินยอมตามข้อกำหนดและนโยบายความเป็นส่วนตัวของผู้ใช้</string>
+</resources>
