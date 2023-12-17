@@ -157,3 +157,7 @@
 	path = alphachatgpt/case_05_diffusion_model/rl_case
 	url = https://github.com/afirez/rl_case.git
 	branch = main
+[submodule "alphachatgpt/case_07_moe_mixtral/transformers"]
+	path = alphachatgpt/case_07_moe_mixtral/transformers
+	url = https://github.com/afirez/transformers.git
+	branch = main
