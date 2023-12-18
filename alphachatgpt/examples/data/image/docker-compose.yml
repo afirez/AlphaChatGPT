@@ -1,0 +1,79 @@
+version: "2.2"
+# version: "3.8"
+
+# todo 服务化未完成
+
+services:
+  # db:
+  #   container_name: mysql_db
+  #   image: mysql:5.7
+  #   restart: unless-stopped
+  #   ports:
+  #     - 3306:3306
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+  #     - MYSQL_USER=${DB_USER}
+  #     - MYSQL_PASSWORD=${DB_PASSWORD}
+  #     - MYSQL_DATABASE=${DB_NAME}
+    # volumes:
+    #   - stonequant-mysql-data:/var/lib/mysql
+
+  # db:
+  #   container_name: postgresql_db
+  #   image: postgres:14.1-alpine
+  #   restart: always
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     - POSTGRES_USER=${DB_USER}
+  #     - POSTGRES_PASSWORD=${DB_PASSWORD}
+  #     - POSTGRES_DB=${DB_NAME}
+
+  # pgadmin:
+  #   container_name: pgadmin2
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
+  #     - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
+  #   ports:
+  #     - 5050:80
+  #   depends_on:
+  #     - db
+
+  app_ocr_img:
+    container_name: app_ocr_img
+    build: .
+    # command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    command: python ./py_ocr_img.py
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    # restart: unless-stopped
+  #   depends_on:
+  #     - db
+
+  # redis:
+  #   container_name: redis
+  #   image: redis:6.2-alpine
+  #   # environment:
+  #   #   - TZ=Asia/Shanghai # 设置时区=value
+  #   # volumes:
+  #   #   - redis:/data
+  #     # - ~/apps/redis/data:/data
+  #     # - ~/apps/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+  #     # - $PWD/redis-data:/var/lib/redis
+  #     # - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+  #   ports:
+  #     - 6379:6379
+  #   # networks:
+  #   #   - postgres
+  #   # restart: unless-stopped
+  #   # # command: redis-server /usr/local/etc/redis/redis.conf
+  #   # # command: redis-server --requirepass root
+  #   # command: redis-server --save 20 1 --loglevel warning --requirepass 123456
+
+
+# volumes:
+#   stonequant-mysql-data:
+
