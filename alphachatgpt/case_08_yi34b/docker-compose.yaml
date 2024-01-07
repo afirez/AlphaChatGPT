@@ -1,0 +1,22 @@
+version: '3'
+services:
+  llm-yi-34b:
+    image: afirezd/llm-yi-34b:v0.1
+    # runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: "all"
+              capabilities: ["gpu"]
+    ports:
+      - "8080:8080"
+    ipc: host
+    ulimits:
+      memlock: -1
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    command: bash

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  llm-yi-34b:
+    image: afirezd/llm-yi-34b:v0.1
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
