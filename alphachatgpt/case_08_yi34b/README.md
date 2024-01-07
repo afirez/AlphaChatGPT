@@ -145,6 +145,30 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 # TheBloke/Beyonder-4x7B-v2-GGUF beyonder-4x7b-v2.Q4_K_M.gguf
 huggingface-cli download --resume-download --local-dir-use-symlinks False TheBloke/Beyonder-4x7B-v2-GGUF beyonder-4x7b-v2.Q4_K_M.gguf --local-dir ./models/TheBloke/Beyonder-4x7B-v2-GGUF
+
+# mistral-7b
+# TheBloke/Mistral-7b-instruct-v0.2-GGUF
+# TheBloke/dolphin-2.6-mistral-7b-GGUF
+huggingface-cli download --resume-download --local-dir-use-symlinks False TheBloke/dolphin-2.6-mistral-7b-GGUF dolphin-2.6-mistral-7b.Q4_K_M.gguf --local-dir ./models/TheBloke/dolphin-2.6-mistral-7b-GGUF
+
+
+# mixtral-8x7b
+# TheBloke/mixtral-8x7b-v0.1-GGUF
+# TheBloke/dolphin-2.6-mixtral-8x7b-GGUF
+# TheBloke/dolphin-2.7-mixtral-8x7b-GGUF
+# cognitivecomputations/dolphin-2.6-mixtral-8x7b-GGUF
+# YeungNLP/firefly-mixtral-8x7b
+# TheBloke/firefly-mixtral-8x7b-GGUF
+huggingface-cli download --resume-download --local-dir-use-symlinks False TheBloke/Mixtral-8x7b-instruct-v0.1-GGUF Mixtral-8x7b-instruct-v0.1.Q4_K_M.gguf --local-dir ./models/TheBloke/Mixtral-8x7b-instruct-v0.1-GGUF
+
+huggingface-cli download --resume-download --local-dir-use-symlinks False TheBloke/dolphin-2.6-mixtral-8x7b-GGUF dolphin-2.6-mixtral-8x7b.Q4_K_M.gguf --local-dir ./models/TheBloke/dolphin-2.6-mixtral-8x7b-GGUF
+
+huggingface-cli download --resume-download --local-dir-use-symlinks False TheBloke/dolphin-2.6-mixtral-8x7b-GGUF dolphin-2.6-mixtral-8x7b.Q3_K_S.gguf --local-dir ./models/TheBloke/dolphin-2.6-mixtral-8x7b-GGUF
+
+huggingface-cli download --resume-download --local-dir-use-symlinks False cognitivecomputations/dolphin-2.6-mixtral-8x7b-GGUF dolphin-2.6-mixtral-8x7b-v2.Q4_K_M.gguf --local-dir ./models/cognitivecomputations/dolphin-2.6-mixtral-8x7b-GGUF
+
+
+
 ```
 
 ```bash
@@ -156,6 +180,12 @@ huggingface-cli download --resume-download --local-dir-use-symlinks False TheBlo
 
 # beyonder-4x7b Q4
 ./server --ctx-size 2048 --host 0.0.0.0  --n-gpu-layers 40 --model ./models/TheBloke/Beyonder-4x7B-v2-GGUF/beyonder-4x7b-v2.Q4_K_M.gguf
+
+# mixtral-8x7b
+# cognitivecomputations/dolphin-2.6-mixtral-8x7b
+# YeungNLP/firefly-mixtral-8x7b
+./server --ctx-size 2048 --host 0.0.0.0  --n-gpu-layers 40 --model ./models/TheBloke/dolphin-2.6-mixtral-8x7b-GGUF/beyonder-4x7b-v2.Q4_K_M.gguf
+
 ```
 
 
