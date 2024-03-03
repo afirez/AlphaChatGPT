@@ -161,3 +161,15 @@
 	path = alphachatgpt/case_07_moe_mixtral/transformers
 	url = https://github.com/afirez/transformers.git
 	branch = main
+[submodule "alphachatgpt/case_00_deep_reinforcement_learning/minizero"]
+	path = alphachatgpt/case_00_deep_reinforcement_learning/minizero
+	url = https://github.com/afirez/minizero.git
+	branch = main
+[submodule "alphachatgpt/case_00_deep_reinforcement_learning/AlphaZero_Gomoku"]
+	path = alphachatgpt/case_00_deep_reinforcement_learning/AlphaZero_Gomoku
+	url = https://github.com/afirez/AlphaZero_Gomoku.git
+	branch = master
+[submodule "alphachatgpt/case_00_deep_reinforcement_learning/muzero-tensorflow2.x"]
+	path = alphachatgpt/case_00_deep_reinforcement_learning/muzero-tensorflow2.x
+	url = https://github.com/afirez/muzero-tensorflow2.x.git
+	branch = main
