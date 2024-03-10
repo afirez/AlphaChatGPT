@@ -48,6 +48,9 @@ DDPG介绍可参考资料：https://zhuanlan.zhihu.com/p/111257402
 https://blog.csdn.net/weixin_41369892/article/details/126102213
 
 [7] 五子棋 junxiaosong/AlphaZero_Gomoku ：https://github.com/junxiaosong/AlphaZero_Gomoku
+
+[8] 自制Alpha Go，基于深度增强学习和蒙特卡洛树搜索的五子棋AI（强化学习入门）附代码: https://zhuanlan.zhihu.com/p/59567014
+代码：https://github.com/pandezhao/alpha_sigma
 ## 相关
 
 ### MDP ( Model-Based | Model-Free)

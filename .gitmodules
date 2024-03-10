@@ -173,3 +173,7 @@
 	path = alphachatgpt/case_00_deep_reinforcement_learning/muzero-tensorflow2.x
 	url = https://github.com/afirez/muzero-tensorflow2.x.git
 	branch = main
+[submodule "alphachatgpt/case_00_deep_reinforcement_learning/alpha_sigma"]
+	path = alphachatgpt/case_00_deep_reinforcement_learning/alpha_sigma
+	url = https://github.com/afirez/alpha_sigma.git
+	branch = master
