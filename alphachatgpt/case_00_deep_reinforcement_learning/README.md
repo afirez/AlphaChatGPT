@@ -51,6 +51,19 @@ https://blog.csdn.net/weixin_41369892/article/details/126102213
 
 [8] 自制Alpha Go，基于深度增强学习和蒙特卡洛树搜索的五子棋AI（强化学习入门）附代码: https://zhuanlan.zhihu.com/p/59567014
 代码：https://github.com/pandezhao/alpha_sigma
+
+[9] Non-stationary Transformer Exploring the Stationarity in Time Series Forecasting: https://arxiv.org/pdf/2205.14415
+github: https://github.com/thuml/Nonstationary_Transformers
+zhihu: https://zhuanlan.zhihu.com/p/667543487
+
+[10] Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting: https://arxiv.org/abs/2106.13008
+github: https://github.com/thuml/Autoformer
+zhihu: https://zhuanlan.zhihu.com/p/648335790
+
+[11] iTransformer: Inverted Transformers Are Effective for Time Series Forecasting: https://arxiv.org/pdf/2310.06625.pdf
+code : https://github.com/thuml/iTransformer
+zhihu: https://zhuanlan.zhihu.com/p/665823421
+
 ## 相关
 
 ### MDP ( Model-Based | Model-Free)
