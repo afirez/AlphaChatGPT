@@ -177,3 +177,7 @@
 	path = alphachatgpt/case_00_deep_reinforcement_learning/alpha_sigma
 	url = https://github.com/afirez/alpha_sigma.git
 	branch = master
+[submodule "alphachatgpt/case_00_lstm/case_atae_lstm/ATAE-LSTM-Sentiment-Classificationn"]
+	path = alphachatgpt/case_00_lstm/case_atae_lstm/ATAE-LSTM-Sentiment-Classificationn
+	url = https://github.com/afirez/ATAE-LSTM-Sentiment-Classificationn.git
+	branch = main
