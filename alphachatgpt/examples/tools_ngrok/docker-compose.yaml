@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ngrok-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4443:4443"
+      - "80:80"
+      - "443:443"
+    # volumes:
+    #   - ./ngrokd:/app/bin
+    # restart: always
