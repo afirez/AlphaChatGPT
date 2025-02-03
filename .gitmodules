@@ -185,3 +185,7 @@
 	path = alphachatgpt/case_00_evolutionary_deep_learning/EvolutionaryDeepLearning
 	url = https://github.com/afirez/EvolutionaryDeepLearning.git
 	branch = main
+[submodule "alphachatgpt/case_09_deepseek_r1/TinyZero"]
+	path = alphachatgpt/case_09_deepseek_r1/TinyZero
+	url = https://github.com/afirez/TinyZero.git
+	branch = main
