@@ -1,7 +1,8 @@
 ## Deepseek
 
+### TinyZero 复现 DeepSeek-R1 强化学习
 ```bash
-git submodule add https://github.com/afirez/TinyZero.git
+git submodule add -b main https://github.com/afirez/TinyZero.git
 ```
 
 - 下载 huggingface 数据集

@@ -189,3 +189,11 @@
 	path = alphachatgpt/case_09_deepseek_r1/TinyZero
 	url = https://github.com/afirez/TinyZero.git
 	branch = main
+[submodule "alphachatgpt/case_09_deepseek_r1/case_01_llm_grpo/DeepSeek-RL-Qwen-0.5B-GRPO-gsm8k"]
+	path = alphachatgpt/case_09_deepseek_r1/case_01_llm_grpo/DeepSeek-RL-Qwen-0.5B-GRPO-gsm8k
+	url = https://github.com/afirez/DeepSeek-RL-Qwen-0.5B-GRPO-gsm8k.git
+	branch = main
+[submodule "alphachatgpt/case_00_deep_reinforcement_learning/alphago_zero_from_scratch"]
+	path = alphachatgpt/case_00_deep_reinforcement_learning/alphago_zero_from_scratch
+	url = https://github.com/afirez/alphago_zero_from_scratch
+	branch = main
