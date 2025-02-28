@@ -197,3 +197,7 @@
 	path = alphachatgpt/case_00_deep_reinforcement_learning/alphago_zero_from_scratch
 	url = https://github.com/afirez/alphago_zero_from_scratch
 	branch = main
+[submodule "alphachatgpt/case_00_deep_reinforcement_learning/RLcode"]
+	path = alphachatgpt/case_00_deep_reinforcement_learning/RLcode
+	url = https://github.com/afirez/RLcode.git
+	branch = master
