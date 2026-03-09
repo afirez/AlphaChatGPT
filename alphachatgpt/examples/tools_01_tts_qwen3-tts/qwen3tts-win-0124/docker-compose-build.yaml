@@ -1,0 +1,7 @@
+version: '3'
+services:
+  qwen3-tts_service:
+    image: afirezd/qwen3-tts:v0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
