@@ -23,6 +23,8 @@ Code: https://github.com/afirez/Ten_Minute_RL
 
 参考
 
+RLcode: : AlphaZero
+
 AlphaGo Zero: https://www.bilibili.com/video/BV1UpmzY7ETK/?spm_id_from=333.1387.upload.video_card.click&vd_source=415935dde407cbb19457f2073c5c70d4
 
 https://github.com/waylandzhang/alphago_zero_from_scratch
