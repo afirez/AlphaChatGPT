@@ -1,0 +1,7 @@
+version: '3'
+services:
+  megatts3_service:
+    image: afirezd/megatts3:v0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile

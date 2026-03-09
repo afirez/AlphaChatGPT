@@ -1,0 +1,35 @@
+version: '3'
+services:
+  # megatts3_img_service:
+  #   image: afirezd/qwen3-tts:v0.1
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  megatts3-service:
+    image: afirezd/megatts3:v0.1
+    # runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: "all"
+              capabilities: ["gpu"]
+    ports:
+      - "7929:7929"
+      - "7861:7860"
+    ipc: host
+    ulimits:
+      memlock: -1
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - GRADIO_SERVER_NAME=0.0.0.0  # Gradio 配置1：允许外部访问
+      - GRADIO_SERVER_PORT=7860     # Gradio 配置2：指定端口
+    volumes:
+      # - ./tmp/app:/app # 1
+      - ./tmp/my_hf_cache:/app/tmp/my_hf_cache
+      - ./tmp/checkpoints/checkpoints:/app/checkpoints    # docker cp megatts3-service:/app/checkpoints ./tmp/checkpoints
+      
+    stdin_open: true
+    tty: true
+    # command: python -m tts.gradio_api
