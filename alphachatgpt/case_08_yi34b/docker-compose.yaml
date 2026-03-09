@@ -15,8 +15,11 @@ services:
     ipc: host
     ulimits:
       memlock: -1
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
     volumes:
-      - .:/app
+      - .:/app # 1
+      - ./workspace:/workspace
     stdin_open: true
     tty: true
     command: bash

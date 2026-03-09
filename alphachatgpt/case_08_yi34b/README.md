@@ -7,7 +7,8 @@
 1 docker/Dockerfile
 
 ```yaml
-FROM nvcr.io/nvidia/pytorch:23.10-py3
+# FROM nvcr.io/nvidia/pytorch:23.10-py3
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install --upgrade pip  # enable PEP 660 support
@@ -97,6 +98,9 @@ nvcc --version
 - [TheBloke/Capybara-Tess-Yi-34B-200K-DARE-Ties-GGUF](https://huggingface.co/TheBloke/Capybara-Tess-Yi-34B-200K-DARE-Ties-GGUF)
 - [NousResearch/Nous-Capybara-34B](https://huggingface.co/NousResearch/Nous-Capybara-34B)
 
+- [bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF](https://huggingface.co/bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF/)
+
+
 如果你想快速下载可靠的模型，可以使用下面的命令:
 
 ```bash
@@ -133,6 +137,15 @@ huggingface-cli download --resume-download --local-dir-use-symlinks False TheBlo
 # TheBloke/Beyonder-4x7B-v2-GGUF beyonder-4x7b-v2.Q4_K_M.gguf
 huggingface-cli download --resume-download --local-dir-use-symlinks False TheBloke/Beyonder-4x7B-v2-GGUF beyonder-4x7b-v2.Q4_K_M.gguf --local-dir ./models/TheBloke/Beyonder-4x7B-v2-GGUF
 
+# bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF Qwen_Qwen3-30B-A3B-Instruct-2507-Q4_K_M.gguf
+huggingface-cli download --resume-download --local-dir-use-symlinks False bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF Qwen_Qwen3-30B-A3B-Instruct-2507-Q4_K_M.gguf --local-dir ./models/tmp/bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF
+
+# bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF Qwen_Qwen3-30B-A3B-Thinking-2507-Q4_K_M.gguf
+huggingface-cli download --resume-download --local-dir-use-symlinks False bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF Qwen_Qwen3-30B-A3B-Thinking-2507-Q4_K_M.gguf --local-dir ./models/tmp/bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF
+
+# bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF Qwen_Qwen3-4B-Thinking-2507-Q4_K_M.gguf
+huggingface-cli download --resume-download --local-dir-use-symlinks False bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF Qwen_Qwen3-4B-Thinking-2507-Q4_K_M.gguf --local-dir ./models/tmp/bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF
+
 ```
 
 huggingface 国内镜像， hf-mirror
@@ -167,8 +180,14 @@ huggingface-cli download --resume-download --local-dir-use-symlinks False TheBlo
 
 huggingface-cli download --resume-download --local-dir-use-symlinks False cognitivecomputations/dolphin-2.6-mixtral-8x7b-GGUF dolphin-2.6-mixtral-8x7b-v2.Q4_K_M.gguf --local-dir ./models/cognitivecomputations/dolphin-2.6-mixtral-8x7b-GGUF
 
+# bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF Qwen_Qwen3-30B-A3B-Instruct-2507-Q4_K_M.gguf
+huggingface-cli download --resume-download --local-dir-use-symlinks False bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF Qwen_Qwen3-30B-A3B-Instruct-2507-Q4_K_M.gguf --local-dir ./models/bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF
 
+# bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF Qwen_Qwen3-30B-A3B-Thinking-2507-Q4_K_M.gguf
+huggingface-cli download --resume-download --local-dir-use-symlinks False bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF Qwen_Qwen3-30B-A3B-Thinking-2507-Q4_K_M.gguf --local-dir ./models/tmp/bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF
 
+# bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF Qwen_Qwen3-4B-Thinking-2507-Q4_K_M.gguf
+huggingface-cli download --resume-download --local-dir-use-symlinks False bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF Qwen_Qwen3-4B-Thinking-2507-Q4_K_M.gguf --local-dir ./models/tmp/bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF
 ```
 
 ```bash
@@ -185,6 +204,13 @@ huggingface-cli download --resume-download --local-dir-use-symlinks False cognit
 # cognitivecomputations/dolphin-2.6-mixtral-8x7b
 # YeungNLP/firefly-mixtral-8x7b
 ./server --ctx-size 2048 --host 0.0.0.0  --n-gpu-layers 40 --model ./models/TheBloke/dolphin-2.6-mixtral-8x7b-GGUF/beyonder-4x7b-v2.Q4_K_M.gguf
+
+# bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF
+./server --ctx-size 2048 --host 0.0.0.0  --n-gpu-layers 40 --model ./models/tmp/bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF/Qwen_Qwen3-30B-A3B-Instruct-2507-Q4_K_M.gguf
+# bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF
+./llama.cpp/build/bin/llama-server --ctx-size 4096 --host 0.0.0.0  --n-gpu-layers 30 --model ./models/tmp/bartowski/Qwen_Qwen3-30B-A3B-Thinking-2507-GGUF/Qwen_Qwen3-30B-A3B-Thinking-2507-Q4_K_M.gguf
+# bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF
+./llama.cpp/build/bin/llama-server --ctx-size 4096 --host 0.0.0.0  --n-gpu-layers 30 --model ./models/tmp/bartowski/Qwen_Qwen3-4B-Thinking-2507-GGUF/Qwen_Qwen3-4B-Thinking-2507-Q4_K_M.gguf
 
 ```
 
@@ -216,7 +242,14 @@ git clone https://github.com/ggerganov/llama.cpp.git
 cd llama.cpp/
 ```
 
-我们使用 make -j LLAMA_CUBLAS=1 对 llama.cpp 进行构建，启用 CUDA 功能，以便让程序支持使用显卡资源，耐心等待构建完毕：
+```bash
+# 新版 llama cmake 编译
+cmake -B build -DGGML_CUDA=ON
+cmake --build build --config Release
+```
+
+我们使用 make -j GGML_CUDA=1 LLAMA_CUBLAS=1 对 llama.cpp 进行构建，启用 CUDA 功能，以便让程序支持使用显卡资源，耐心等待构建完毕：
+
 
 ```bash
 # make -j LLAMA_CUBLAS=1

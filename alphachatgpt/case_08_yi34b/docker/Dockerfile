@@ -1,4 +1,6 @@
-FROM nvcr.io/nvidia/pytorch:23.10-py3
+# FROM nvcr.io/nvidia/pytorch:23.10-py3
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
+# docker run --rm --gpus all pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel nvidia-smi
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install --upgrade pip  # enable PEP 660 support
