@@ -1,0 +1,18 @@
+version: '3'
+services:
+  pytorch_container:
+    build: .
+    container_name: pytorch_container
+    ports:
+      - "8888:8888"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./workspace:/workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

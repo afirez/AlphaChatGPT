@@ -18,6 +18,20 @@ https://github.com/waylandzhang/DeepSeek-RL-Qwen-0.5B-GRPO-gsm8k
 git submodule add -b main https://github.com/afirez/DeepSeek-RL-Qwen-0.5B-GRPO-gsm8k.git
 ```
 
+```bash 
+pip install -U huggingface_hub
+
+# 设置环境变量以使用镜像站：
+export HF_ENDPOINT=https://hf-mirror.com
+export HF_HOME = "usr/local/"
+# 对于 Windows Powershell，使用：
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+$env:HF_HOME = "./tmp"
+
+huggingface-cli download --resume-download Qwen/Qwen2.5-0.5B-Instruct
+
+```
+
 - datasets
 
 ```bash

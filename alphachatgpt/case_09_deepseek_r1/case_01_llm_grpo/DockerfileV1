@@ -1,0 +1,46 @@
+# 使用 NVIDIA CUDA 基础镜像
+FROM nvidia/cuda:12.1.1-base-ubuntu22.04
+# docker run --rm --gpus all nvidia/cuda:12.1.1-base-ubuntu22.04 nvidia-smi
+
+# 设置环境变量
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
+# 安装必要的系统依赖
+RUN apt-get update --fix-missing && \
+    apt-get install -y wget build-essential ca-certificates libglib2.0-0 libxext6 libsm6 libxrender1 git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# 下载并安装 Miniconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py310_23.11.0-1-Linux-x86_64.sh -O miniconda.sh && \
+    bash miniconda.sh -b -p /opt/miniconda && \
+    rm miniconda.sh
+
+# 设置 Miniconda 环境变量
+ENV PATH="/opt/miniconda/bin:$PATH"
+
+# 创建并激活 Python 3.10 环境
+RUN conda create -n myenv python=3.10 -y
+ENV CONDA_DEFAULT_ENV myenv
+ENV CONDA_PREFIX /opt/miniconda/envs/$CONDA_DEFAULT_ENV
+ENV PATH $CONDA_PREFIX/bin:$PATH
+
+# 安装 PyTorch 2.4 与 CUDA 12.1
+# RUN conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+# RUN pip uninstall torch torchvision torchaudio
+Run pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+
+# 安装 Unsloth 和 Jupyter
+# RUN pip install unsloth 
+RUN pip install "unsloth[cu121-ampere-torch240] @ git+https://github.com/unslothai/unsloth.git"
+RUN pip install ipykernel jupyter
+
+# 设置工作目录
+WORKDIR /workspace
+
+# 暴露 Jupyter 端口
+EXPOSE 8888
+
+# 启动 Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
