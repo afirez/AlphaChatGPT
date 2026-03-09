@@ -1,0 +1,7 @@
+version: '3'
+services:
+  voice-pro_service:
+    image: afirezd/voice-pro:v0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
