@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米SU 7 Ultra - 巅峰性能科技轿车</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 图表库 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- AOS动画库 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+        :root {
+            --primary-color: #ff6700;
+            --secondary-color: #2d85f0;
+            --accent-color: #ffcc00;
+            --dark-color: #121212;
+            --light-color: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(255, 103, 0, 0.8), rgba(45, 133, 240, 0.8));
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .bento-card {
+            background: rgba(18, 18, 18, 0.8);
+            border-radius: 1rem;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 103, 0, 0.2);
+        }
+
+        .hero-section {
+            grid-column: span 12;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.xiaomiev.com/assets/su7-ultra/kv-pc.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+            z-index: -1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .mega-text {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .image-card {
+            position: relative;
+            padding-bottom: 75%;
+            overflow: hidden;
+        }
+
+        .image-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.2);
+            border: 2px solid white;
+        }
+
+        .color-yellow {
+            background-color: #FFD700;
+        }
+
+        .color-silver {
+            background-color: #C0C0C0;
+        }
+
+        .color-green {
+            background-color: #4CAF50;
+        }
+
+        .color-black {
+            background-color: #000000;
+        }
+
+        .color-white {
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .performance-chart-container {
+            width: 100%;
+            height: 300px;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .mega-text {
+                font-size: 5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .mega-text {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="text-6xl md:text-8xl font-black mb-4 gradient-text">小米SU 7 Ultra</h1>
+            <p class="text-xl md:text-2xl mb-8">巅峰性能科技轿车 · 可街可赛</p>
+            <div class="flex space-x-4">
+                <a href="#overview" class="px-8 py-3 bg-orange-600 hover:bg-orange-700 rounded-full font-bold transition-all">了解更多</a>
+                <a href="#specs" class="px-8 py-3 border border-white hover:bg-white hover:text-black rounded-full font-bold transition-all">技术规格</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 便当盒网格布局 -->
+    <div class="bento-grid">
+        <!-- 概述卡片 -->
+        <div id="overview" class="bento-card grid-cols-span-12 md:col-span-8 feature-card animate-on-scroll" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">巅峰之作</h2>
+            <p class="text-lg mb-4">小米SU 7 Ultra是小米汽车推出的高性能纯电动轿车，定位为巅峰性能科技轿车，官方宣称其为"可街可赛"的四门赛车。2025年2月27日正式上市，起售价52.99万元。</p>
+            <p class="text-lg mb-4">作为小米汽车的旗舰产品，SU 7 Ultra融合了极致性能、豪华体验和先进科技，目标是成为地表最快四门量产车。</p>
+            <p class="text-lg">预售开启仅10分钟，小订量就突破3680台，市场反响热烈。小米SU 7 Ultra的目标定位是"性能比肩保时捷、科技紧追特斯拉、豪华媲美BBA"，全年销售目标为1万台，相当于特斯拉Model S Plaid、宝马M系列和保时捷Taycan全年在华销量的两倍。</p>
+        </div>
+
+        <!-- 性能数据卡片 -->
+        <div class="bento-card md:col-span-4 feature-card animate-on-scroll" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex flex-col h-full justify-center items-center text-center">
+                <div class="stat-number gradient-text">1.98<span class="text-2xl">秒</span></div>
+                <div class="stat-label">0-100km/h 加速时间</div>
+                <div class="mt-2 text-sm text-gray-400">全球顶级加速性能</div>
+            </div>
+        </div>
+
+        <!-- 外观图片卡片 -->
+        <div class="bento-card md:col-span-6 image-card animate-on-scroll" data-aos="fade-right">
+            <img src="https://www.xiaomiev.com/assets/su7-ultra/exterior-1.jpg" alt="小米SU 7 Ultra外观">
+        </div>
+
+        <!-- 设计特点卡片 -->
+        <div class="bento-card md:col-span-6 feature-card animate-on-scroll" data-aos="fade-left">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">重新定义运动与豪华</h2>
+            <p class="mb-4">在「符合直觉」的美学设计理念加持下，小米SU 7 Ultra将速度与优雅展现得淋漓尽致。气场全开的空气动力学和碳纤维套件，让舒展流畅的车身充满张力，为运动与豪华设立新标准。</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>车身尺寸：5115 × 1970 × 1465 mm，轴距3000 mm</li>
+                <li>U型风刀+大前铲设计，增加前部下压力</li>
+                <li>进气格栅开口加大10%，提升散热性能</li>
+                <li>主动尾部扩散器，两挡自适应调节</li>
+                <li>碳纤维固定大尾翼，尾翼翼展达1560mm</li>
+                <li>全车17处使用碳纤维，总面积达3.74m²</li>
+                <li>碳纤维车顶，带来12kg减重</li>
+            </ul>
+        </div>
+
+        <!-- 最高速度卡片 -->
+        <div class="bento-card md:col-span-4 feature-card animate-on-scroll">
+            <div class="flex flex-col h-full justify-center items-center text-center">
+                <div class="stat-number gradient-text">350<span class="text-2xl">km/h</span></div>
+                <div class="stat-label">最高时速</div>
+            </div>
+        </div>
+
+        <!-- 下压力卡片 -->
+        <div class="bento-card md:col-span-4 feature-card animate-on-scroll">
+            <div class="flex flex-col h-full justify-center items-center text-center">
+                <div class="stat-number gradient-text">285<span class="text-2xl">kg</span></div>
+                <div class="stat-label">最大下压力</div>
+            </div>
+        </div>
+
+        <!-- 充电时间卡片 -->
+        <div class="bento-card md:col-span-4 feature-card animate-on-scroll">
+            <div class="flex flex-col h-full justify-center items-center text-center">
+                <div class="stat-number gradient-text">12<span class="text-2xl">分钟</span></div>
+                <div class="stat-label">10%-80%充电时间</div>
+            </div>
+        </div>
+
+        <!-- 内饰图片卡片 -->
+        <div class="bento-card md:col-span-6 image-card animate-on-scroll">
+            <img src="https://www.xiaomiev.com/assets/su7-ultra/interior-1.jpg" alt="小米SU 7 Ultra内饰">
+        </div>
+
+        <!-- 内饰特点卡片 -->
+        <div id="interior" class="bento-card md:col-span-6 feature-card animate-on-scroll">
+            <h2 class="text-2xl font-bold mb-4">所触所见，处处豪华</h2>
+            <p class="mb-4">全新设计的豪华座舱，针对激烈驾驶升级运动座椅与方向盘，大面积使用昂贵的Alcantara®超细纤维面料和碳纤维材料，搭配Ultra专属的座舱配色和缝制工艺，所触所见，处处豪华。</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>全新运动座椅，升级主动侧翼支撑</li>
+                <li>碳纤维运动方向盘，赛车风格设计</li>
+                <li>Alcantara®超细纤维面料，总包覆面积超5m²</li>
+                <li>全车17处使用碳纤维，总面积达3.74m²</li>
+                <li>座椅靠背专属赛道刺绣条纹和Ultra刺绣徽标</li>
+            </ul>
+        </div>
+
+        <!-- 颜色选择卡片 -->
+        <div class="bento-card md:col-span-12 feature-card animate-on-scroll">
+            <h2 class="text-2xl font-bold mb-6">五种精选车身颜色</h2>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <div class="text-center">
+                    <div class="color-option color-yellow mx-auto"></div>
+                    <p class="mt-2">闪电黄</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-option color-silver mx-auto"></div>
+                    <p class="mt-2">太空银</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-option color-green mx-auto"></div>
+                    <p class="mt-2">鹦鹉绿</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-option color-black mx-auto"></div>
+                    <p class="mt-2">曜石黑</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-option color-white mx-auto"></div>
+                    <p class="mt-2">珍珠白</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 性能对比图表卡片 -->
+        <div id="specs" class="bento-card md:col-span-8 feature-card animate-on-scroll">
+            <h2 class="text-2xl font-bold mb-4">性能对比</h2>
+            <div class="performance-chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 纽北成绩卡片 -->
+        <div class="bento-card md:col-span-4 feature-card animate-on-scroll">
+            <div class="flex flex-col h-full justify-center items-center text-center">
+                <i class="fas fa-trophy text-yellow-500 text-5xl mb-4"></i>
+                <div class="stat-number gradient-text">6:46.874</div>
+                <div class="stat-label">纽北赛道圈速成绩</div>
+                <p class="mt-4 text-sm">全球最速四门车</p>
+            </div>
+        </div>
+
+        <!-- 技术创新卡片 -->
+        <div class="bento-card md:col-span-6 feature-card animate-on-scroll">
+            <h2 class="text-2xl font-bold mb-4">技术创新</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold"><i class="fas fa-bolt text-yellow-500 mr-2"></i>三电机系统</h3>
+                    <p>搭载小米自研的超级电机，组成三电机四驱系统，整体峰值功率强大。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold"><i class="fas fa-battery-full text-green-500 mr-2"></i>高性能电池</h3>
+                    <p>采用宁德时代提供的高性能电池，放电功率可达1300千瓦以上，支持超快充电。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold"><i class="fas fa-feather text-blue-500 mr-2"></i>轻量化技术</h3>
+                    <p>大量使用碳纤维材料，如1.7m²的超大面积碳纤维车顶，带来12kg减重。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold"><i class="fas fa-wind text-purple-500 mr-2"></i>空气动力学</h3>
+                    <p>全新的空气动力学设计，提供更稳定的高速驾驶体验。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 赛道表现卡片 -->
+        <div class="bento-card md:col-span-6 feature-card animate-on-scroll" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">赛道表现</h2>
+            <div class="space-y-4">
+                <div class="p-3 hover:bg-gray-800 rounded-lg transition-all">
+                    <h3 class="text-xl font-semibold"><i class="fas fa-trophy text-yellow-500 mr-2"></i>纽博格林北环赛道</h3>
+                    <p>以6分46秒874的官方认证圈速成绩，成为全球最速四门车。2025年5月，雷军透露小米SU7 Ultra量产版正在再次挑战纽北赛道，力争创造更好成绩。</p>
+                </div>
+                <div class="p-3 hover:bg-gray-800 rounded-lg transition-all">
+                    <h3 class="text-xl font-semibold"><i class="fas fa-flag-checkered text-red-500 mr-2"></i>株洲国际赛道</h3>
+                    <p>成为最速四门量产车，圈速成绩为1分41秒806。这一成绩打破了多项国内赛道纪录，展现了小米在高性能电动车领域的实力。</p>
+                </div>
+                <div class="p-3 hover:bg-gray-800 rounded-lg transition-all">
+                    <h3 class="text-xl font-semibold"><i class="fas fa-tachometer-alt text-blue-500 mr-2"></i>上海国际赛车场</h3>
+                    <p>以2分9秒944的圈速，超过保时捷Taycan Turbo GT，成为上海国际赛车场最速量产车。这一成绩证明了小米SU7 Ultra在专业赛道上的卓越表现。</p>
+                </div>
+                <div class="p-3 hover:bg-gray-800 rounded-lg transition-all">
+                    <h3 class="text-xl font-semibold"><i class="fas fa-bolt text-purple-500 mr-2"></i>极速测试</h3>
+                    <p>在盐城试验场完成极速实测，达到了359.71km/h的惊人速度，超过官方宣称的350km/h最高时速。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 市场定位卡片 -->
+        <div class="bento-card md:col-span-12 feature-card animate-on-scroll">
+            <h2 class="text-2xl font-bold mb-4">市场定位</h2>
+            <p class="mb-4">小米SU 7 Ultra的市场定位为高性能豪华电动车，目标是"性能比肩保时捷、科技紧追特斯拉、豪华媲美BBA"。全年销售目标为1万台，相当于特斯拉Model S Plaid、宝马M系列和保时捷Taycan全年在华销量的两倍。</p>
+            <div class="flex flex-wrap gap-4 mt-6">
+                <div class="px-4 py-2 bg-orange-600 rounded-full">高性能</div>
+                <div class="px-4 py-2 bg-blue-600 rounded-full">豪华体验</div>
+                <div class="px-4 py-2 bg-purple-600 rounded-full">先进科技</div>
+                <div class="px-4 py-2 bg-green-600 rounded-full">赛道级表现</div>
+                <div class="px-4 py-2 bg-red-600 rounded-full">中国品牌</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="py-8 px-6 text-center border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <p class="mb-4">© 2025 信息展示页面 | 创作者: @alphazz</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+                <a href="https://www.xiaomiev.com/ultra" target="_blank" class="text-gray-400 hover:text-white transition-colors">小米汽车官网</a>
+                <a href="https://baike.baidu.com/item/XIAOMI%20SU7%20Ultra/64669588" target="_blank" class="text-gray-400 hover:text-white transition-colors">百度百科</a>
+                <a href="http://www.news.cn/auto/20240722/2ecb4e551819486ba82937e0ad65c824/c.html" target="_blank" class="text-gray-400 hover:text-white transition-colors">新华网</a>
+                <a href="https://www.pcauto.com.cn/hq/355216.html" target="_blank" class="text-gray-400 hover:text-white transition-colors">太平洋汽车网</a>
+                <a href="https://auto.hangzhou.com.cn/news/content/2024-10/30/content_8806911.html" target="_blank" class="text-gray-400 hover:text-white transition-colors">杭州网</a>
+            </div>
+            <p class="text-sm text-gray-500">本页面仅用于信息展示，所有内容和图片版权归原作者所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 初始化AOS动画
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+            
+            // 滚动动画（兼容旧版动画）
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            function checkScroll() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight * 0.85) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // 初始检查
+            
+            // 性能对比图表
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            const performanceChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['加速性能', '最高速度', '操控性', '制动性能', '充电速度', '科技配置'],
+                    datasets: [{
+                        label: '小米SU 7 Ultra',
+                        data: [95, 98, 90, 92, 88, 94],
+                        backgroundColor: 'rgba(255, 103, 0, 0.2)',
+                        borderColor: 'rgba(255, 103, 0, 1)',
+                        pointBackgroundColor: 'rgba(255, 103, 0, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(255, 103, 0, 1)'
+                    }, {
+                        label: '竞品A',
+                        data: [90, 85, 88, 86, 80, 92],
+                        backgroundColor: 'rgba(45, 133, 240, 0.2)',
+                        borderColor: 'rgba(45, 133, 240, 1)',
+                        pointBackgroundColor: 'rgba(45, 133, 240, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(45, 133, 240, 1)'
+                    }, {
+                        label: '竞品B',
+                        data: [85, 90, 92, 88, 75, 85],
+                        backgroundColor: 'rgba(255, 204, 0, 0.2)',
+                        borderColor: 'rgba(255, 204, 0, 1)',
+                        pointBackgroundColor: 'rgba(255, 204, 0, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(255, 204, 0, 1)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            tension: 0.1
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(255, 255, 255, 0.2)'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.2)'
+                            },
+                            pointLabels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                color: 'rgba(255, 255, 255, 0.6)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
