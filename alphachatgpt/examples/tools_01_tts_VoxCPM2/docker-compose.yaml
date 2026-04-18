@@ -1,0 +1,33 @@
+version: '3'
+services:
+  voxcpm2-service:
+    image: afirezd/voxcpm2:v0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: "all"
+              capabilities: ["gpu"]
+    ports:
+      - "7860:7860"
+      - "8808:8808"
+    ipc: host
+    ulimits:
+      memlock: -1
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - GRADIO_SERVER_NAME=0.0.0.0  # Gradio 配置1：允许外部访问
+      - GRADIO_SERVER_PORT=7860     # Gradio 配置2：指定端口
+    volumes:
+      # - ./tmp/app:/app # 1
+      # - ./workspace:/workspace
+    - ./tmp/pretrained_models/OpenBMB/VoxCPM2:/root/.cache/modelscope/hub/models/OpenBMB/VoxCPM2
+    - ./tmp/pretrained_models/iic/SenseVoiceSmall:/root/.cache/modelscope/hub/models/iic/SenseVoiceSmall
+    stdin_open: true
+    tty: true
+    # command: bash
